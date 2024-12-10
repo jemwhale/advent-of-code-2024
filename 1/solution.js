@@ -33,6 +33,19 @@ const sumDiff = () => {
     return totalDiff;
 }
 
-const solution = sumDiff();
+const solution1 = sumDiff();
 
-console.log(solution);
+console.log('Part 1 solution: ', solution1);
+
+const sumSimilarity = () => {
+    let totalSimilarity = 0;
+    sortedList1.forEach((num1) => {
+        const multiplier = sortedList2.filter((num2) => num2 === num1).length;
+        totalSimilarity = totalSimilarity + (num1 * multiplier);
+    })
+    return totalSimilarity;
+}
+
+const solution2 = sumSimilarity();
+
+console.log('Part 2 solution: ', solution2);
