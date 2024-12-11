@@ -6,10 +6,10 @@
 import { readFileLinesSync } from "../lib/helpers.js";
 
 const lines = readFileLinesSync(import.meta.url, 'input-data.txt');
-const list1 = [];
-const list2 = [];
+const list1: number[] = [];
+const list2: number[] = [];
 
-const splitLists = () => {
+const splitLists = ():void => {
     lines.forEach((line) => {
         list1.push(parseInt(line.slice(0, 5)));
         list2.push(parseInt(line.slice(8)));
@@ -21,7 +21,7 @@ splitLists();
 const sortedList1 = list1.sort();
 const sortedList2 = list2.sort();
 
-const sumDiff = () => {
+const sumDiff = (): number => {
     let totalDiff = 0;
     for (let i = 0; i < sortedList1.length; i++) {
         const comparison = [sortedList1[i], sortedList2[i]];
@@ -37,7 +37,7 @@ const solution1 = sumDiff();
 
 console.log('Part 1 solution: ', solution1);
 
-const sumSimilarity = () => {
+const sumSimilarity = (): number => {
     let totalSimilarity = 0;
     sortedList1.forEach((num1) => {
         const multiplier = sortedList2.filter((num2) => num2 === num1).length;

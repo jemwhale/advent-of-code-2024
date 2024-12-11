@@ -8,10 +8,10 @@ import { dirname } from 'path';
  * @param {String} file - Should be a `.txt` file - Filename of the file to be read from
  * @returns {Array}
  */
-export const readFileLinesSync = (importMetaUrl, file) => {
+export const readFileLinesSync = (importMetaUrl: any, file: string): string[] => {
   const __dirname = fileURLToPath(dirname(importMetaUrl));
   let filePath = `${__dirname}/${file}`;
-  return readFileSync(filePath, 'UTF8').toString().split('\n');
+  return readFileSync(filePath, {encoding: 'utf8'}).toString().split('\n');
 }
 
 /**
@@ -20,8 +20,8 @@ export const readFileLinesSync = (importMetaUrl, file) => {
  * @param {String} file - Should be a `.txt` file - Filename of the file to be read from
  * @returns {String}
  */
-export const readFileStringSync = (importMetaUrl, file) => {
+export const readFileStringSync = (importMetaUrl: any, file: string): string => {
   const __dirname = fileURLToPath(dirname(importMetaUrl));
   let filePath = `${__dirname}/${file}`;
-  return readFileSync(filePath, 'UTF8').toString();
+  return readFileSync(filePath, 'utf8').toString();
 }
