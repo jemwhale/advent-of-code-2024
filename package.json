@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "npm run clean && npx tsc && npm run copydata",
+    "build": "npm run clean && npm run copydata && npx tsc --watch ",
     "clean": "rm -rf ./dist",
     "copydata": "copyfiles -u 1 src/**/*.txt dist/"
   },

@@ -16,10 +16,6 @@
       "moduleResolution": "node", // Pretty much always node for modern JS. Other option is "classic"
       "paths": {}, // A series of entries which re-map imports to lookup locations relative to the baseUrl
   
-      // Source Map
-      "sourceMap": true, // enables the use of source maps for debuggers and error reporting etc
-      "sourceRoot": "/", // Specify the location where a debugger should locate TypeScript files instead of relative source locations.
-  
       // Strict Checks
       "alwaysStrict": true, // Ensures that your files are parsed in the ECMAScript strict mode, and emit “use strict” for each source file.
       "allowUnreachableCode": false, // pick up dead code paths
@@ -31,6 +27,16 @@
       "noUncheckedIndexedAccess": false, // accessing index must always check for undefined
       "noUnusedLocals": true, // Report errors on unused local variables.
       "noUnusedParameters": true // Report errors on unused parameters in functions
+    },
+    "watchOptions": {
+      // Use native file system events for files and directories
+      "watchFile": "useFsEvents",
+      "watchDirectory": "useFsEvents",
+      // Poll files for updates more frequently
+      // when they're updated a lot.
+      "fallbackPolling": "dynamicPriority",
+      // Don't coalesce watch notification
+      "synchronousWatchDirectory": true,
     },
     "include": ["./**/*.ts"],
     "exclude": [
