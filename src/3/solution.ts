@@ -33,3 +33,13 @@ if (targetMatches2) for (const element of targetMatches2) {
 }
 const solution2 = total;
 console.log(solution2);
+
+/** POST SOLUTION NOTES */
+
+// can destructure capture groups with matchAll() so no need to slice entire match
+
+// const targetRegex = /mul\((\d{1,3})\,(\d{1,3})\)/g;
+
+// for (const [, x, y] of targetMatches) {
+//     total += parseInt(x) * parseInt(x);
+// }
